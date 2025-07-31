@@ -89,3 +89,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+/*==================== EMAILJS CONTACT FORM ====================*/
+(function(){
+  emailjs.init("YOUR_PUBLIC_KEY"); // Replace this with your actual public key
+})();
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        .then(function(response) {
+            alert('✅ Message sent successfully!');
+            form.reset();
+        }, function(error) {
+            console.error('❌ EmailJS error:', error);
+            alert('❌ Failed to send message. Please try again.');
+        });
+    });
+});
+
