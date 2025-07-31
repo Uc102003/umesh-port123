@@ -56,7 +56,7 @@ sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
 
-/*==================== CONTACT FORM SUBMISSION ====================*/
+/*==================== CONTACT FORM SUBMISSION ====================
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('.contact__form');
     if (!form) return;
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
+*/
 /*==================== EMAILJS CONTACT FORM ====================*/
 (function(){
   emailjs.init("6rjKd_Ao8eP9xXxU1"); // ✅ Your public key
