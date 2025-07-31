@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
 */
 /*==================== EMAILJS CONTACT FORM ====================*/
 (function(){
-  emailjs.init("6rjKd_Ao8eP9xXxU1"); // ✅ Your public key
+  emailjs.init("6rjKd_Ao8eP9xXxU1"); // ← your public key
 })();
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -102,12 +102,12 @@ document.addEventListener('DOMContentLoaded', function () {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    emailjs.sendForm('service_xxxx1234', 'template_yyyy5678', this)
+    emailjs.sendForm('service_3xkzv9k', 'template_9a6g5ru', this)
       .then(function(response) {
         alert('✅ Message sent successfully!');
         form.reset();
       }, function(error) {
-        console.error('❌ EmailJS error:', error); // ✅ look here!
+        console.error('❌ EmailJS error:', error);
         alert('❌ Failed to send message. Please try again.');
       });
   });
