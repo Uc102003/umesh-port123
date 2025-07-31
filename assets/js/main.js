@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /*==================== EMAILJS CONTACT FORM ====================*/
 (function(){
-  emailjs.init("YOUR_PUBLIC_KEY"); // Replace this with your actual public key
+  emailjs.init("6rjKd_Ao8eP9xXxU1");
 })();
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        emailjs.sendForm('service_3xkzv9k', 'template_9a6g5ru', this)
         .then(function(response) {
             alert('✅ Message sent successfully!');
             form.reset();
@@ -112,4 +112,3 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-
