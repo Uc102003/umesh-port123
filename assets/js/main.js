@@ -55,3 +55,37 @@ sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{});
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+
+/*==================== CONTACT FORM SUBMISSION ====================*/
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('.contact__form');
+    if (!form) return;
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const name = form.querySelector('input[placeholder="Name"]').value.trim();
+        const email = form.querySelector('input[placeholder="Email"]').value.trim();
+        const message = form.querySelector('textarea').value.trim();
+
+        try {
+            const response = await fetch('https://umesh-port123-back.onrender.com//contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, email, message })
+            });
+
+            if (response.ok) {
+                alert('Message sent successfully!');
+                form.reset();
+            } else {
+                alert('Failed to send message. Please try again later.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('There was an error sending the message.');
+        }
+    });
+});
