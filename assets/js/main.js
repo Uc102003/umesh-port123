@@ -92,23 +92,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /*==================== EMAILJS CONTACT FORM ====================*/
 (function(){
-  emailjs.init("6rjKd_Ao8eP9xXxU1");
+  emailjs.init("6rjKd_Ao8eP9xXxU1"); // ✅ Your public key
 })();
 
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contact-form');
-    if (!form) return;
+  const form = document.getElementById('contact-form');
+  if (!form) return;
 
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-        emailjs.sendForm('service_3xkzv9k', 'template_9a6g5ru', this)
-        .then(function(response) {
-            alert('✅ Message sent successfully!');
-            form.reset();
-        }, function(error) {
-            console.error('❌ EmailJS error:', error);
-            alert('❌ Failed to send message. Please try again.');
-        });
-    });
+    emailjs.sendForm('service_xxxx1234', 'template_yyyy5678', this)
+      .then(function(response) {
+        alert('✅ Message sent successfully!');
+        form.reset();
+      }, function(error) {
+        console.error('❌ EmailJS error:', error); // ✅ look here!
+        alert('❌ Failed to send message. Please try again.');
+      });
+  });
 });
