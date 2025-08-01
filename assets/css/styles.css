@@ -33,7 +33,12 @@
     --smaller-font-size: .875rem;
   }
 }
-
+@media (max-width: 768px) {
+    .nav__menu {
+        display: none;
+    }
+    /* Add styles for mobile layout */
+}
 /*===== BASE =====*/
 *, ::before, ::after {
   box-sizing: border-box;
@@ -320,6 +325,10 @@ img {
 }
 .work__img img:hover {
   transform: scale(1.1);
+}
+img, svg {
+    max-width: 100%;
+    height: auto;
 }
 
 /* ===== CONTACT =====*/
